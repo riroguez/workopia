@@ -1,0 +1,16 @@
+{
+    "name": "geovannyrios/woropia",
+    "description": "Job listing application",
+    "authors": [
+        {
+            "name": "Geovanny Rios",
+            "email": "desingwebsite@gmail.com"
+        }
+    ], 
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}
