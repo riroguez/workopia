@@ -33,10 +33,11 @@ function loadView($name, $data = [])
  * @param string $name
  * @return void
  */
-function loadPartials($name)
+function loadPartials($name, $data = [])
 {
    $partialPath = basePath("App/views/partials/{$name}.php");
    if(file_exists($partialPath)) {
+      extract($data);
       require_once $partialPath;
    } else {
       echo "Partial {$name} not found";
@@ -92,4 +93,16 @@ function sanitize($dirty)
    $dirty = htmlspecialchars($dirty);
    $dirty = stripslashes($dirty);
    return $dirty;
+}
+
+/**
+ * Redired to a given url
+ * 
+ * @param string $url
+ * @return void
+ */
+function redirec($url)
+{
+   header("Location: {$url}");
+   exit;
 }
